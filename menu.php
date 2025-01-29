@@ -23,21 +23,25 @@
 
 <!--MENU-->
     <section class="menu">
-        <div class="entrée1">
+        <div class="menuuu">
             <div class="entrée2">
                 <img class="burrata" src="images/burrata.png" alt="antipasti">
                 <h3 class="burrata2">Burrata à la provençale</h3>
             </div>
         </div>
 
-        <div class="plat1">
+        <div class="menuuu">
             <div class="plat2">
                 <img class="linguine" src="images/linguines à la carbonara.png" alt="linguines à la carbonara">
                 <h3 class="linguine2">Linguines à la carbonara</h3>
+            </div>
         </div>
 
-        <div class="dessert1">
-
+        <div class="menuuu">
+            <div class="dessert2">
+                <img class="tiramisu" src="images/tiramisu.png" alt="tiramisu">
+                <h3 class="tiramisu2">Tiramisu au café</h3>
+            </div>
         </div>
     </section>
 
