@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
 }
+
+/*HAUT DE PAGE*/
 .tete{
     background-color: black;
     padding: 10px;
@@ -18,7 +20,7 @@ header ul li {
     margin-right: 5px; 
 }
 header a {
-    color: rgb(242, 15, 15);
+    color: #f20f0f;
     text-decoration: none;
 }
 .titre{
@@ -26,6 +28,86 @@ header a {
     font-family: "Instrument Serif", serif;
     font-weight: 400;
 }
+
+/*PAGE*/
+.menu{
+    display: flex;
+}
 .entrée1{
-    border: solid 5px black;
+    margin: 5% 10% 0% 10%;
+    height: 50vh;
+    width: 25%;
+}
+.entrée2{
+    border: solid 5px #f20f0f;
+    border-radius: 20px;
+    height: 50vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.burrata{
+    width: 215px; 
+    height: 215px;
+    margin-top: 15%;
+    border-radius: 20px;
+    transition: 0.2s ease;
+}
+.burrata:hover{
+    box-shadow: #ffffff 0px 0px 20px;
+}
+.burrata2{
+    color: #f20f0f;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-size: 23px;
+    padding-top: 3%;
+}
+.plat1{
+    margin: 5% 10% 0% 10%;
+    height: 50vh;
+    width: 25%;
+}
+.plat2{
+    border: solid 5px #f20f0f;
+    border-radius: 20px;
+    height: 50vh;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+}
+.linguine{
+    width: 215px; 
+    height: 215px;
+    margin-top: 15%;
+    border-radius: 20px;
+    transition: 0.2s ease;
+}
+.linguine:hover{
+    box-shadow: #ffffff 0px 0px 20px;
+}
+.linguine2{
+    color: #f20f0f;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-size: 23px;
+    padding-top: 3%;
+}
+
+/*BAS DE PAGE*/
+.bas {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    background-color: rgb(41, 41, 41);
+    padding: 1%;
+    margin-top: 40%;
+}
+.bas a {
+    color: green;
+    text-decoration: none;
 }
