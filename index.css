@@ -1,6 +1,7 @@
 *{
     margin-top: 0%;
     margin-left: 0%;
+    
 }
 .tete{
     display: flex;
@@ -40,9 +41,10 @@
     justify-content: space-evenly;
     background-color: rgb(41, 41, 41);
     padding: 30;
-    margin-top: 40%;
+    margin-top: 0;
 }
 .bas a {
     color: green;
     text-decoration: none;
 }
+

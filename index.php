@@ -17,6 +17,10 @@
             </ul>
         </nav>
     </section>
+    <!-- Ajout de la div pour l'effet ombragé -->
+    <div class="image-container">
+        <img src="imageaccueil.jpeg" alt="restaurant italien" height="80%" width="100%%" />
+    </div>
     <footer>
         <div class="bas">
             <a href="index.php">Accueil</a>
