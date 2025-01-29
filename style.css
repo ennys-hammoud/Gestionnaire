@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.tete{
+    background-color: black;
+    padding: 10px;
+    gap: 20%;
+}
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+header ul li {
+    margin-right: 5px; 
+}
+header a {
+    color: rgb(242, 15, 15);
+    text-decoration: none;
+}
+.titre{
+    margin-top: 5%;
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+}
+.entrée1{
+    border: solid 5px black;
+}
