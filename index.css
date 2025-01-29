@@ -3,6 +3,12 @@
     margin-left: 0%;
     
 }
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Pour empêcher le défilement horizontal */
+}
 .tete{
     display: flex;
     justify-content: center;
@@ -42,9 +48,12 @@
     background-color: rgb(41, 41, 41);
     padding: 30;
     margin-top: 0;
+    height: 100px; /* Ajuste la hauteur ici */
+    
 }
 .bas a {
     color: green;
     text-decoration: none;
+    font-size: 20px;
 }
 
