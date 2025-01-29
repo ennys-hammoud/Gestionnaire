@@ -19,7 +19,7 @@
     
 </section>
 <br>
-<section class="corps">
+<section class="co">
     <div class="formulaire">
         <?php
         session_start();

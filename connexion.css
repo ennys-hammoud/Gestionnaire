@@ -1,6 +1,7 @@
 *{
     margin-top: 0%;
     margin-left: 0%;
+    
 }
 .tete{
     display: flex;
@@ -10,6 +11,12 @@
     padding: 10px;
     gap: 20%;
 }
+body{
+    background-image: url("https://img.freepik.com/vecteurs-libre/fond-monochrome-blanc-style-papier_23-2148997966.jpg?t=st=1738154540~exp=1738158140~hmac=b2eca0b4bb5afe306fb0434af4c2e1f74279f1a2c7c5c06c998531f1f9556505&w=900");
+    background-size: cover;
+}
+
+
 
 
 .tete ul {
@@ -33,17 +40,52 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center; /* Centrer les éléments en colonne */
 }
+.formulaire form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer les éléments en colonne */
+}
+.formulaire label, .formulaire input {
+    margin-bottom: 10px; /* Ajouter un espace entre les éléments */
+}
+.formulaire input label{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+form{
+    opacity: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+
+input {
+    
+    border-radius: 10px;
+    color: rgb(233, 38, 32);
+}
+label {
+    color: rgb(250, 55, 55);
+    border-radius: 10px;
+}
+
 .bas {
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
-    background-color: rgb(41, 41, 41);
+    background-color: black;
     padding: 30;
-    margin-top: 40%;
+    margin-bottom: 0%;
 }
 .bas a {
     color: green;
     text-decoration: none;
+}
+footer{
+    margin-top: 20%;
 }
 
