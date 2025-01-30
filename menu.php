@@ -13,7 +13,7 @@
 <body>
 
 <!--HEADER-->
-    <header class="tete">
+    <header class="header">
         <ul>
             <li><a href="menu.php"><img src="images/menu.png" alt="logo" height="50" width="50"></a></li>
             <li><a href="index.php"><h1 class="titre">MAMMA MIA</h1></a></li>
@@ -69,7 +69,7 @@
     </section>
 
 <!--FOOTER-->
-    <footer>
+    <footer class="footer">
         <div class="bas">
             <a href="index.php">Accueil</a>
             <a href="menu.php">Menu</a>
