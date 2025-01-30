@@ -24,23 +24,46 @@
 <!--MENU-->
     <section class="menu">
         <div class="menuuu">
-            <div class="entrée2">
-                <img class="burrata" src="images/burrata.png" alt="antipasti">
-                <h3 class="burrata2">Burrata à la provençale</h3>
+            <div class="entreeplatdessert">
+                <img class="burrata" src="images/burrata.png" alt="photo burrata à la provençale">
+                <h3 class="nomplat">Burrata à la provençale</h3>
             </div>
         </div>
 
         <div class="menuuu">
-            <div class="plat2">
-                <img class="linguine" src="images/linguines à la carbonara.png" alt="linguines à la carbonara">
-                <h3 class="linguine2">Linguines à la carbonara</h3>
+            <div class="entreeplatdessert">
+                <img class="linguine" src="images/linguines à la carbonara.png" alt=" photo linguines à la carbonara">
+                <h3 class="nomplat">Linguines à la carbonara</h3>
             </div>
         </div>
 
         <div class="menuuu">
-            <div class="dessert2">
-                <img class="tiramisu" src="images/tiramisu.png" alt="tiramisu">
-                <h3 class="tiramisu2">Tiramisu au café</h3>
+            <div class="entreeplatdessert">
+                <img class="tiramisu" src="images/tiramisu.png" alt="image tiramisu au café">
+                <h3 class="nomplat">Tiramisu au café</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="suitemenu">
+        <div class="menuuu">
+            <div class="entreeplatdessert">
+                <img class="carpaccio" src="images/carpaccio.png" alt="image carpaccio de boeuf">
+                <h3 class="nomplat">Carpaccio de boeuf</h3>
+            </div>
+        </div>
+
+        <div class="menuuu">
+            <div class="entreeplatdessert">
+                <img class="pizza" src="images/pizza au fromage.png" alt="image pizza au fromage">
+                <h3 class="nomplat">Pizza au fromage</h3>
+            </div>
+        </div>
+
+        <div class="menuuu">
+            <div class="entreeplatdessert">
+                <img class="pannacotta" src="images/panna cotta.png" alt="image panna cotta aux fruits rouges">
+                  <h3 class="nomplat">Panna cotta aux fruits rouges</h3>
             </div>
         </div>
     </section>
