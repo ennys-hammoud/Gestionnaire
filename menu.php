@@ -25,21 +25,27 @@
     <section class="menu">
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="burrata" src="images/burrata.png" alt="photo burrata à la provençale">
+                <a href="catégories.php">
+                    <img class="burrata" src="images/burrata.png" alt="photo burrata à la provençale">
+                </a>
                 <h3 class="nomplat">Burrata à la provençale</h3>
             </div>
         </div>
 
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="linguine" src="images/linguines à la carbonara.png" alt=" photo linguines à la carbonara">
+                <a href="catégories.php">
+                    <img class="linguine" src="images/linguines à la carbonara.png" alt=" photo linguines à la carbonara">
+                </a>
                 <h3 class="nomplat">Linguines à la carbonara</h3>
             </div>
         </div>
 
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="tiramisu" src="images/tiramisu.png" alt="image tiramisu au café">
+                <a href="catégories.php">
+                    <img class="tiramisu" src="images/tiramisu.png" alt="image tiramisu au café">
+                </a>
                 <h3 class="nomplat">Tiramisu au café</h3>
             </div>
         </div>
@@ -48,21 +54,27 @@
     <section class="suitemenu">
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="carpaccio" src="images/carpaccio.png" alt="image carpaccio de boeuf">
+                <a href="catégories.php">
+                    <img class="carpaccio" src="images/carpaccio.png" alt="image carpaccio de boeuf">*
+                </a>
                 <h3 class="nomplat">Carpaccio de boeuf</h3>
             </div>
         </div>
 
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="pizza" src="images/pizza au fromage.png" alt="image pizza au fromage">
+                <a href="catégories.php">
+                    <img class="pizza" src="images/pizza au fromage.png" alt="image pizza au fromage">
+                </a>
                 <h3 class="nomplat">Pizza au fromage</h3>
             </div>
         </div>
 
         <div class="menuuu">
             <div class="entreeplatdessert">
-                <img class="pannacotta" src="images/panna cotta.png" alt="image panna cotta aux fruits rouges">
+                <a href="catégories.php">
+                    <img class="pannacotta" src="images/panna cotta.png" alt="image panna cotta aux fruits rouges">
+                </a>
                   <h3 class="nomplat">Panna cotta aux fruits rouges</h3>
             </div>
         </div>
