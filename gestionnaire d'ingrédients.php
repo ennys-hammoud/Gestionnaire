@@ -12,19 +12,19 @@ function connectDB() {
     }
 }
 
-// Récupérer tous les ingrédients
+// Récupérer les ingrédients
 function getIngredients() {
     $pdo = connectDB();
     $stmt = $pdo->query("SELECT * FROM ingredients");
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-// Mettre à jour la quantité d'un ingrédient
-function updateIngredient($id, $quantite) {
+// Mettre à jour les ingrédients
+function updateIngredient($id, $nom) {
     $pdo = connectDB();
-    $sql = "UPDATE ingredients SET quantite = :quantite WHERE id = :id";
+    $sql = "UPDATE ingredients SET nom = :nom WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['quantite' => $quantite, 'id' => $id]);
+    $stmt->execute(['nom' => $nom, 'id' => $id]);
 }
 
 // Supprimer un ingrédient
@@ -37,9 +37,9 @@ function deleteIngredient($id) {
 
 // Gérer les actions (modification ou suppression)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['update'])) {
-        updateIngredient($_POST['id'],);
-    } elseif (isset($_POST['delete'])) {
+    if (isset($_POST['update']) && !empty($_POST['id']) && !empty($_POST['nom'])) {
+        updateIngredient($_POST['id'], $_POST['nom']);
+    } elseif (isset($_POST['delete']) && !empty($_POST['id'])) {
         deleteIngredient($_POST['id']);
     }
 }
@@ -77,6 +77,7 @@ $ingredients = getIngredients();
                 <td>
                     <form method="post">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($ingredient['id']); ?>">
+                        <input type="text" name="nom" value="<?= htmlspecialchars($ingredient['nom']); ?>">
                         <button type="submit" name="update">Modifier</button>
                         <button type="submit" name="delete" onclick="return confirm('Supprimer cet ingrédient ?');">Supprimer</button>
                     </form>
