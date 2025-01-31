@@ -1,60 +1,98 @@
 <?php
-// Connexion à la base de données
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mamma_mia";
+session_start();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérifiez la connexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+// Connexion à la base de données avec PDO
+function connectDB() {
+    try {
+        $pdo = new PDO("mysql:host=localhost;dbname=mamma_mia;charset=utf8", "root", "");
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
+    } catch (PDOException $e) {
+        die("Erreur de connexion : " . $e->getMessage());
+    }
 }
 
-// Récupérer les données de la table
-$sql = "SELECT id, nom FROM plats";
-$result = $conn->query($sql);
+// Récupérer les ingrédients
+function getIngredients() {
+    $pdo = connectDB();
+    $stmt = $pdo->query("SELECT * FROM ingredients");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+// Mettre à jour les ingrédients
+function updateIngredient($id, $nom) {
+    $pdo = connectDB();
+    $sql = "UPDATE ingredients SET nom = :nom WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['nom' => $nom, 'id' => $id]);
+}
+
+// Supprimer un ingrédient
+function deleteIngredient($id) {
+    $pdo = connectDB();
+    $sql = "DELETE FROM ingredients WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => $id]);
+}
+
+// Gérer les actions (modification ou suppression)
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['update']) && !empty($_POST['id']) && !empty($_POST['nom'])) {
+        updateIngredient($_POST['id'], $_POST['nom']);
+    } elseif (isset($_POST['delete']) && !empty($_POST['id'])) {
+        deleteIngredient($_POST['id']);
+    }
+}
+
+$ingredients = getIngredients();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>catégories</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Gestion des Ingrédients</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    
 <!--HEADER-->
-    <header class="header">
+<header class="header">
         <ul>
             <li><a href="menu.php"><img src="images/menu.png" alt="logo" height="50" width="50"></a></li>
             <li><a href="index.php"><h1 class="titre">MAMMA MIA</h1></a></li>
             <li><a href="deconnexion.php"><img src="images/connexion.png" alt="logo" height="50" width="50"></a></li>
         </ul>
     </header>
-
-<!--formulaire choisir une entrée-->
-    <form action="/votre_action" method="post">
-        <label for="plat">Choisissez une entrée :</label>
-        <select name="plat" id="plat">
-            <?php
-            if ($result->num_rows > 0) {
-                // Afficher les données dans le menu déroulant
-                while($row = $result->fetch_assoc()) {
-                    echo '<option value="' . $row["id"] . '">' . $row["nom_du_plat"] . '</option>';
-                }
-            } else {
-                echo '<option value="">Aucune entrée disponible</option>';
-            }
-            $conn->close();
-            ?>
-        </select>
-        <br>
-        <input type="submit" value="Soumettre">
-    </form>
+<body>
+    <h1>Liste des Ingrédients</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($ingredients as $ingredient) : ?>
+            <tr>
+                <td><?= htmlspecialchars($ingredient['id']); ?></td>
+                <td><?= htmlspecialchars($ingredient['nom']); ?></td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($ingredient['id']); ?>">
+                        <input type="text" name="nom" value="<?= htmlspecialchars($ingredient['nom']); ?>">
+                        <button type="submit" name="update">Modifier</button>
+                        <button type="submit" name="delete" onclick="return confirm('Supprimer cet ingrédient ?');">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="bas">
+            <a href="index.php">Accueil</a>
+            <a href="menu.php">Menu</a>
+            <a href="connexion.php">Connexion</a>
+        </div>
+    </footer>
 </body>
 </html>
