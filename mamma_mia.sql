@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 31 jan. 2025 à 09:21
+-- Généré le : ven. 31 jan. 2025 à 10:18
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -46,6 +46,61 @@ INSERT INTO `catégories` (`id`, `nom_catégories`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `ingredients`
+--
+
+DROP TABLE IF EXISTS `ingredients`;
+CREATE TABLE IF NOT EXISTS `ingredients` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `ingredients`
+--
+
+INSERT INTO `ingredients` (`id`, `nom`) VALUES
+(1, 'lait vache'),
+(2, 'crème fraiche '),
+(3, 'citron'),
+(4, 'sel'),
+(5, 'huile d\'olive '),
+(6, 'basilic'),
+(7, 'poivre noir'),
+(8, 'tomates'),
+(9, 'filet de boeuf'),
+(10, 'parmesan'),
+(11, 'roquette'),
+(12, 'câpres'),
+(13, 'truffe'),
+(14, 'vinaigre balsamique '),
+(15, 'farine'),
+(16, 'eau tiède'),
+(17, 'levure boulangère '),
+(18, 'sucre'),
+(19, 'sauce tomate'),
+(20, 'mozzarella'),
+(21, 'fromage de chèvre'),
+(22, 'gorgonzola'),
+(23, 'gruyère'),
+(24, 'spaghettis'),
+(25, 'guanciale'),
+(26, 'oeufs'),
+(27, 'pecorino romano\r\n\r\n'),
+(28, 'mascarpone'),
+(29, 'speculoos'),
+(30, 'café fort\r\n\r\n'),
+(31, 'cacao en poudre\r\n\r\n'),
+(32, 'crème liquide entière\r\n\r\n'),
+(33, 'gélatine en feuilles\r\n\r\n'),
+(34, 'vanille'),
+(35, 'coulis de fruits rouges\r\n\r\n'),
+(36, 'caramel');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `plats`
 --
 
@@ -53,21 +108,21 @@ DROP TABLE IF EXISTS `plats`;
 CREATE TABLE IF NOT EXISTS `plats` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
-  `id_catégories` varchar(255) NOT NULL,
+  `catégories` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `plats`
 --
 
-INSERT INTO `plats` (`id`, `nom`, `id_catégories`) VALUES
-(1, 'burrata à la provençale', '1'),
-(2, 'carpaccio de boeuf', '2'),
-(3, 'linguines à la carbonara', '3'),
-(4, 'pizza au fromage', '4'),
-(5, 'tiramisu au café', '5'),
-(6, 'panna cotta aux fruits rouges', '6');
+INSERT INTO `plats` (`id`, `nom`, `catégories`) VALUES
+(1, 'burrata à la provençal ', 'entrée'),
+(2, 'carpaccio de boeuf', 'entrée'),
+(3, 'pizza fromage', 'plat'),
+(4, 'linguine carbonara', 'plat'),
+(5, 'tiramisu café', 'dessert'),
+(6, 'panna cotta aux fruits rouges', 'dessert');
 
 -- --------------------------------------------------------
 
