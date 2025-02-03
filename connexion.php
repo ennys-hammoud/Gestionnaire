@@ -21,49 +21,35 @@
 <br>
 <section class="co">
     <div class="formulaire">
-        <?php
+        <form method="post" action="connexion.php">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" id="pseudo" autocomplete="off">
+            <label for="mdp">Mot de passe</label>
+            <input type="password" name="mdp" id="mdp" autocomplete="off">
+            <input type="submit" value="Se connecter">
+        </form>
+    </div>
+    <?php
         session_start();
         $bdd = new PDO('mysql:host=localhost;dbname=mia', 'root', '');
+        if(isset($_POST['pseudo']) && isset($_POST['mdp'])){
+            $pseudo = htmlspecialchars($_POST['pseudo']);
+            $mdp = htmlspecialchars($_POST['mdp']);
 
-        if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
-            $pseudo = ($_POST['pseudo']);
-            $mdp = ($_POST['mdp']);
-
-            // Vérifier si l'utilisateur existe déjà
-            $recupUser = $bdd->prepare('SELECT * FROM user WHERE pseudo = ? AND mdp = ?');
-            $recupUser->execute(array($pseudo, $mdp));
-
-            if ($recupUser->rowCount() == 0) {
-                $insertUser = $bdd->prepare('INSERT INTO user(pseudo, mdp) VALUES(?, ?)');
-                $insertUser->execute(array($pseudo, $mdp));
-
-                $recupUser = $bdd->prepare('SELECT * FROM user WHERE pseudo = ? AND mdp = ?');
-                $recupUser->execute(array($pseudo, $mdp));
-            }
-
-            if ($recupUser->rowCount() > 0) {
+            $req = $bdd->prepare('SELECT * FROM user WHERE pseudo = ? AND mdp = ?');
+            $req->execute(array($pseudo, $mdp));
+            $resultat = $req->fetch();
+            
+            if(!$resultat){
+                echo 'Mauvais identifiant ou mot de passe !';
+            }else{
+                $_SESSION['id'] = $resultat['id'];
                 $_SESSION['pseudo'] = $pseudo;
-                $_SESSION['mdp'] = $mdp;
-                $_SESSION['id'] = $recupUser->fetch()['id'];
-                echo "bonjour " . $_SESSION['pseudo'];
+                echo 'Vous êtes connecté !';
+                header('Location: index.php');
             }
-        }
-
-        if (isset($_SESSION['pseudo'])) {
-            echo '<form method="post" action="deconnexion.php" align="center">
-                    <input type="submit" value="Déconnexion">
-                    </form>';
-        } else {
-            echo '<form method="post" action="" align="center">
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" name="pseudo" id="pseudo" required autocomplete="off">
-                    <label for="mdp">Mot de passe</label>
-                    <input type="password" name="mdp" id="mdp" required autocomplete="off">
-                    <input type="submit" value="Connexion">
-                    </form>';
         }
         ?>
-    </div>
 </section>
 <footer>
     <div class="bas">
