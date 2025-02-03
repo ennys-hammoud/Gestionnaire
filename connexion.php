@@ -36,7 +36,7 @@
             $pseudo = htmlspecialchars($_POST['pseudo']);
             $mdp = htmlspecialchars($_POST['mdp']);
 
-            $req = $bdd->prepare('SELECT * FROM user WHERE pseudo = ? AND mdp = ?');
+            $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE pseudo = ? AND mdp = ?');
             $req->execute(array($pseudo, $mdp));
             $resultat = $req->fetch();
             
