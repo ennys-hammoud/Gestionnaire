@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
                 </a>
                 <h3 class="nomplat">Burrata à la provençale</h3>
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients` LIMIT 8');/*les 8 premières ligne de la bdd*/
                 ?>
                 <ul class="php">
@@ -53,7 +53,7 @@
                 </a>
                 <h3 class="nomplat">Linguines à la carbonara</h3>
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients`LIMIT 23,4');/*on compte 4 lignes à partir de la 23e de la bdd*/
                 ?>
                 <ul class="php">
@@ -76,7 +76,7 @@
                 </a>
                 <h3 class="nomplat">Tiramisu au café</h3>
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients`LIMIT 27,4');/*on compte 4 lignes à partir de la 27e de la bdd*/
                 ?>
                 <ul class="php">
@@ -101,7 +101,7 @@
                 </a>
                 <h3 class="nomplat">Carpaccio de boeuf</h3>
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients`LIMIT 8, 6');/*on compte 6 lignes à partir de la 8e de la bdd*/
                 ?>
                 <ul class="php">
@@ -124,7 +124,7 @@
                 </a>
                 <h3 class="nomplat">Pizza au fromage</h3>
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients`LIMIT 14, 9');/*on compte 9 lignes à partir de la 14e de la bdd*/
                 ?>
                 <ul class="php">
@@ -147,7 +147,7 @@
                 </a>
                   <h3 class="nomplat">Panna cotta aux fruits rouges</h3>
                   <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=mamma_mia', 'root', '');
+                $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
                 $reponse = $bdd->query('SELECT nom FROM `ingredients`LIMIT 31, 5');/*on compte 5 lignes à partir de la 31e de la bdd*/
                 ?>
                 <ul class="php">
@@ -162,16 +162,6 @@
                 ?>
             </div>
         </div>
-    </section>
-
-<!--ADD ITEM FORM-->
-    <section class="add-item">
-        <h2>Ajouter un nouvel aliment</h2>
-        <form action="add_item.php" method="post">
-            <label for="new-item">Nom de l'aliment:</label>
-            <input type="text" id="new-item" name="new-item" required>
-            <button type="submit">Ajouter</button>
-        </form>
     </section>
 
 <!--FOOTER-->

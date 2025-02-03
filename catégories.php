@@ -4,7 +4,7 @@ session_start();
 // Connexion à la base de données avec PDO
 function connectDB() {
     try {
-        $pdo = new PDO("mysql:host=localhost;dbname=mamma_mia;charset=utf8", "root", "");
+        $bdd = new PDO('mysql:host=localhost:3306;dbname=emilie-ponce_mamma_mia;charset=utf8', 'emilie-ponce', '*1Pxne681');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch (PDOException $e) {
@@ -53,7 +53,7 @@ $ingredients = getIngredients();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Ingrédients</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="menu.css">
 </head>
 <!--HEADER-->
 <header class="header">

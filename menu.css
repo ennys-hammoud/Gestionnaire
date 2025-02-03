@@ -177,3 +177,43 @@ th{
     font-weight: 400;
     font-size: 19px;
 }
+
+/*MEDIA QUERIES HEADER*/
+@media (min-width: 0px) and (max-width: 600px){
+    .header{
+        
+    }
+
+}
+
+/*MEDIA QUERIES MENU*/
+@media (min-width: 0px) and (max-width: 600px){
+    .menu{
+        flex-direction: column !important;
+    }
+    .menuuu{
+        width: 80% !important;
+    }
+    .entreeplatdessert{
+        height: 45vh !important;
+        margin-top: 10% !important;
+    }
+    .burrata{
+        width: 100% !important;
+        height: 25vh !important;
+    }
+    .nomplat{
+        font-size: 30px !important;
+    }
+    .php{
+        font-size: 25px !important;
+    }
+
+
+
+
+
+    .suitemenu{
+        flex-direction: column !important;
+    }
+}
